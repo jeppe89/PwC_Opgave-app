@@ -1,0 +1,11 @@
+.header {
+    margin-bottom: 20px;
+}
+
+.header-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.header-logo {
+    margin-right: 30px;
+}

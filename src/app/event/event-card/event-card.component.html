@@ -1,0 +1,20 @@
+<mat-card class="event-card">
+  <mat-card-header>
+    <mat-card-title class="event-card-title">
+      {{ event.attributes.name }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ event.attributes.description }}
+    </p>
+    <p>
+      Dato: {{ event.attributes.date | date:'short' }}
+    </p>
+    <p>Antal tilmeldte: {{ event.relationships.users.data.length }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="isEventSubscribedTo" mat-stroked-button disabled="true" class="app-green event-subscribed-button">Tilmeldt</button>
+    <button mat-raised-button routerLink="{{ event.id }}">Se mere</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,43 @@
+<div *ngIf="alreadyAuthenticated; else registerForm">
+    Du har allerede en bruger. Klik på dit navn i højre hjørne for at logge ud.
+</div>
+<ng-template #registerForm>
+    <h2>Opret din bruger</h2>
+    <form [formGroup]="form" (ngSubmit)="register()">
+        <mat-form-field>
+        <input matInput formControlName="name" placeholder="Navn">
+        <mat-error *ngIf="name.hasError('required')">
+            Indtast venligst dit navn
+        </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="Email">
+            <mat-error *ngIf="email.hasError('required')">
+                Indtast venligst din email
+            </mat-error>
+            <mat-error *ngIf="email.hasError('email')">
+                Indtast en gyldig email adresse
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="password" type="password" placeholder="Adgangskode">
+            <mat-error *ngIf="password.hasError('required')">
+                Indtast venligst din adgangskode
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="phone" placeholder="Telefon">
+            <mat-error *ngIf="phone.hasError('required')">
+                Indtast venligst dit nummer
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button type="submit" color="primary">Opret bruger</button>
+    </form>
+    <p>
+        Har du allerede en bruger, så log ind her: <a routerLink="/login">Login</a>
+    </p>
+</ng-template>

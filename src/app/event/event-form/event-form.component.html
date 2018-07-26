@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput formControlName="name" placeholder="Navn">
+        <mat-error *ngIf="name.hasError('required')">
+            Indtast venligst et navn
+        </mat-error>
+        <mat-error *ngIf="name.hasError('minlength')">
+            Navnet skal være på mindst 5 bogstaver
+        </mat-error>
+        <mat-error *ngIf="name.hasError('maxlength')">
+            Navnet kan maksimalt indeholde 50 bogstaver
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput formControlName="description" placeholder="Beskrivelse">
+        <mat-error *ngIf="description.hasError('required')">
+            Indtast venligst en beskrivelse
+        </mat-error>
+        <mat-error *ngIf="description.hasError('maxlength')">
+            Beskrivelsen kan maksimalt indeholde 255 bogstaver
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput formControlName="date" placeholder="Dato og tidspunkt"><br>
+        <mat-error *ngIf="date.hasError('required')">
+            Indtast venligst en dato
+        </mat-error>        
+        <mat-error *ngIf="date.hasError('pattern')">
+            Indtast venligst en gyldig dato
+        </mat-error>
+    </mat-form-field>
+  <span class="form-date-hint">YYYY-MM-DD hh:mm:ss</span>
+  <br>
+  <button *ngIf="!event" mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Opret</button>
+  <button *ngIf="event" mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Gem ændringer</button>
+</form>

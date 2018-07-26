@@ -1,0 +1,15 @@
+<div *ngIf="event; else error">
+  <p>
+    Navn: {{ event.attributes.name }}<br>
+    Beskrivelse: {{ event.attributes.description }}<br>
+    Dato: {{ event.attributes.date | date:'short' }}<br>
+    Antal tilmeldte: {{ event.relationships.users.data.length }}
+  </p>
+  <button *ngIf="eventRegistered && !hoverButton" mat-stroked-button class="app-green event-subscribed-button" (mouseenter)="hoverButton = !hoverButton">Tilmeldt</button>
+  <button *ngIf="hoverButton" mat-stroked-button color="warn" (mouseleave)="hoverButton = !hoverButton" (click)="unsubscribeFromEvent()">Afmeld</button>
+  <button *ngIf="!eventRegistered" mat-raised-button (click)="subscribeToEvent()" color="primary">Tilmeld</button>
+  <button mat-button (click)="goBack()">Gå tilbage</button>
+</div>
+<ng-template #error>
+  {{ errorMessage }}
+</ng-template>

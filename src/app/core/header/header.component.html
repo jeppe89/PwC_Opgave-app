@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="header">
+    <span class="header-logo">TEST OPGAVE</span>
+
+    <a mat-button routerLink="/event">Arrangementer</a>
+    <a *ngIf="admin$ | async" mat-button routerLink="/admin">Admin Dashboard</a>
+    <span class="header-fill-remaining-space"></span>
+    <button *ngIf="(username$ | async) as username; else showLogin" mat-button [matMenuTriggerFor]="dropdown">{{ username }}</button>
+</mat-toolbar>
+<mat-menu #dropdown="matMenu">
+  <button mat-menu-item (click)="logout()">Log ud</button>
+</mat-menu>
+<ng-template #showLogin>
+    <a mat-button routerLink="/login">Log ind</a>
+</ng-template>

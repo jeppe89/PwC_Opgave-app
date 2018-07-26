@@ -1,0 +1,30 @@
+{
+    "events": [
+        { 
+            "id": 1, 
+            "name": "Årsfest", 
+            "description": "Lorem ipsum",
+            "date": "07-16-2018 20:00:00"
+        },
+        { 
+            "id": 2, 
+            "name": "Intro kursus til Ruby on Rails", 
+            "description": "Lorem ipsum",
+            "date": "07-16-2018 20:00:00"
+        },
+        { 
+            "id": 3, 
+            "name": "Learning on databases", 
+            "description": "Lorem ipsum",
+            "date": "07-16-2018 20:00:00"
+        }
+    ],
+    "users": [
+        { 
+            "id": 1, 
+            "name": "Jeppe Thougaard Nielsen", 
+            "email": "jeppe@thougaard.com",
+            "phone": "51805918" 
+        }
+    ]
+  }

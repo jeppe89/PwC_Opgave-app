@@ -1,0 +1,9 @@
+.event-card {
+    max-width: 300px;
+    margin: 10px;
+}
+
+.event-card-title {
+    font-weight: bold;
+    font-size: 18px;
+}

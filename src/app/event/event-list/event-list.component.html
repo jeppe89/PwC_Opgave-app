@@ -1,0 +1,7 @@
+<h2>Arrangementer</h2>
+<div class="cards-container" *ngIf="events else showError">
+    <app-event-card *ngFor="let event of events" [event]="event" [isEventSubscribedTo]="isEventSubscribed(event)"></app-event-card>
+</div>
+<ng-template #showError>
+    {{ errorMessage }}
+</ng-template>

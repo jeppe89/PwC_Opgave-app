@@ -1,0 +1,24 @@
+<h2>Log ind</h2>
+<form [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field>
+        <input matInput formControlName="email" placeholder="Email">
+        <mat-error *ngIf="email.hasError('required')">
+            Indtast venligst din email
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput formControlName="password" type="password" placeholder="Adgangskode">
+        <mat-error *ngIf="password.hasError('required')">
+            Indtast venligst din adgangskode
+        </mat-error>
+    </mat-form-field>
+    <div class="login-button-group">
+        <button mat-raised-button color="primary">
+            Log ind
+        </button>
+    </div>
+</form>
+<p>
+Har du ikke en bruger, så opret dig her: <a routerLink="/register">Opret bruger</a>
+</p>
