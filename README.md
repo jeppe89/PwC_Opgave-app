@@ -1,27 +1,19 @@
-# PwcOpgaveApp
+<p align="center"><img src="https://angular.io/assets/images/logos/angular/angular.svg" width="100"></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+# Pwc Test opgave - Angular Applikation
 
-## Development server
+Web Applikationen er bygget på [Angular](https://angular.io/) frameworket.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Funktioner
+I applikationen kan man se arrangementer og tilmelde sig dem. For at kunne tilmelde sig et arrangement skal man være logget ind. Man kan derfor oprette sig som bruger og herefter bruge sin email og adgangskode til at logge ind med.
 
-## Code scaffolding
+Som administrator kan man oprette arrangementer og se de tilmeldte brugere på alle arrrangementerne.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Data
+Applikationen henter alle sine data fra Laravel API'et.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Biblioteker
+Der er anvendt følgende Angular biblioteker:
+- [mpalourdio/ng-http-loader](https://github.com/mpalourdio/ng-http-loader) - til at vise en loading gif, når der lave HTTP kald.
+- [auth0/angular2-jwt](https://github.com/auth0/angular2-jwt) - til håndtering af JSON Web Tokens.
+- [Angular Material](https://material.angular.io/) - til design udseende af applikationen.
