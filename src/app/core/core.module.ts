@@ -24,6 +24,10 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,9 +36,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: () => {
-          return localStorage.getItem('access_token');
-        },
+        tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:8000'],
       }
     }),
