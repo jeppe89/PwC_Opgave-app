@@ -1,4 +1,3 @@
-import { EnsureHttpsInterceptor } from './services/ensure-https-interceptor.service';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -59,8 +58,7 @@ export function tokenGetter() {
     HeaderService,
     NotificationService,
     AuthGuardService,
-    AdminGuardService,
-    { provide: HTTP_INTERCEPTORS, useClass: EnsureHttpsInterceptor, multi: true }
+    AdminGuardService
   ]
 })
 export class CoreModule { }
