@@ -38,7 +38,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['https://pwc-testopgave-api.herokuapp.com'],
+        whitelistedDomains: ['pwc-testopgave-api.herokuapp.com']
       }
     }),
     CoreRoutingModule,

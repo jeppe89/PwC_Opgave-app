@@ -8,8 +8,7 @@ import { Globals } from '../../globals';
 
 @Injectable()
 export class EventService {
-  // url = this.globals.API_URL + '/events/';
-  url = 'https://pwc-testopgave-api.herokuapp.com/api/events/';
+  url = this.globals.API_URL + '/events/';
   private handleError: HandleError;
 
   constructor(
