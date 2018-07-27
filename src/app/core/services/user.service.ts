@@ -8,7 +8,7 @@ import { Globals } from './../../globals';
 
 @Injectable()
 export class UserService {
-  url = this.global.API_URL + '/users/';
+  url = this.global.API_URL + '/users';
   private handleError: HandleError;
 
   constructor(
@@ -35,7 +35,7 @@ export class UserService {
       }
     };
     return this.httpClient
-      .post(this.url + 'register', object)
+      .post(this.url + '/register', object)
       .pipe(
         catchError(this.handleError('registerUser'))
       );

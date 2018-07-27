@@ -13,7 +13,7 @@ import { Globals } from '../../globals';
 
 @Injectable()
 export class AuthService {
-  url = this.global.API_URL + '/auth/';
+  url = this.global.API_URL + '/auth';
   private handleError: HandleError;
 
   constructor(
@@ -44,7 +44,7 @@ export class AuthService {
     };
 
     return this.httpClient
-      .post(this.url + 'login', object)
+      .post(this.url + '/login', object)
       .pipe(
         catchError(this.handleError('login'))
       ).subscribe(
@@ -73,7 +73,7 @@ export class AuthService {
    */
   logout(navigateTo?: string) {
     this.httpClient
-      .post(this.url + 'logout', {})
+      .post(this.url + '/logout', {})
       .pipe(
         catchError(this.handleError('logout'))
       ).subscribe(

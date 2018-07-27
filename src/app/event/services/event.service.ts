@@ -8,7 +8,7 @@ import { Globals } from '../../globals';
 
 @Injectable()
 export class EventService {
-  url = this.globals.API_URL + '/events/';
+  url = this.globals.API_URL + '/events';
   private handleError: HandleError;
 
   constructor(
@@ -33,7 +33,7 @@ export class EventService {
    */
   getEvent(id: string): Observable<any> {
     return this.httpClient
-      .get(this.url + id)
+      .get(this.url + '/' + id)
       .pipe(
         catchError(this.handleError('getEvent', []))
       );
@@ -76,7 +76,7 @@ export class EventService {
       ]
     };
     return this.httpClient
-      .post(this.url + id + '/users', object)
+      .post(this.url + '/' + id + '/users', object)
       .pipe(
         catchError(this.handleError('registerForEvent', []))
       );
@@ -96,7 +96,7 @@ export class EventService {
       ]
     };
     return this.httpClient
-      .request('delete', this.url + id + '/users',
+      .request('delete', this.url + '/' + id + '/users',
       {
         body: object
       })
