@@ -2,7 +2,7 @@
 
 # Pwc Test opgave - Angular Applikation
 
-Web Applikationen er bygget på [Angular](https://angular.io/) frameworket.
+Web Applikationen er bygget på [Angular](https://angular.io/) frameworket version 6.
 
 ## Funktioner
 I applikationen kan man se arrangementer og tilmelde sig dem. For at kunne tilmelde sig et arrangement skal man være logget ind. Man kan derfor oprette sig som bruger og herefter bruge sin email og adgangskode til at logge ind med.
