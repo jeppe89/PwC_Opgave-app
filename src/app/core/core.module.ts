@@ -1,7 +1,8 @@
+import { EnsureHttpsInterceptor } from './services/ensure-https-interceptor.service';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -58,7 +59,8 @@ export function tokenGetter() {
     HeaderService,
     NotificationService,
     AuthGuardService,
-    AdminGuardService
+    AdminGuardService,
+    { provide: HTTP_INTERCEPTORS, useClass: EnsureHttpsInterceptor, multi: true }
   ]
 })
 export class CoreModule { }
