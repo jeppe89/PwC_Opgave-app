@@ -5,7 +5,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { NotificationSnackbarComponent } from './notification-snackbar.component';
-
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,9 @@ import { NotificationSnackbarComponent } from './notification-snackbar.component
     NgHttpLoaderModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    Globals
+  ],
   entryComponents: [
     NotificationSnackbarComponent
   ],

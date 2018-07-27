@@ -9,10 +9,11 @@ import { HeaderService } from './header.service';
 import { IToken } from './token.interface';
 import { NotificationService } from './notification.service';
 import { HandleError, HttpErrorHandlerService } from './http-error-handler.service';
+import { Globals } from '../../globals';
 
 @Injectable()
 export class AuthService {
-  url = 'http://localhost:8000/api/auth/';
+  url = this.global.API_URL + '/auth/';
   private handleError: HandleError;
 
   constructor(
@@ -21,7 +22,8 @@ export class AuthService {
     private tokenService: TokenService,
     private headerService: HeaderService,
     private notificationService: NotificationService,
-    private httpErrorHandler: HttpErrorHandlerService) {
+    private httpErrorHandler: HttpErrorHandlerService,
+    private global: Globals) {
       this.handleError = this.httpErrorHandler.createHandleError('AuthService');
     }
 

@@ -4,15 +4,17 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { HttpErrorHandlerService, HandleError } from './http-error-handler.service';
+import { Globals } from './../../globals';
 
 @Injectable()
 export class UserService {
-  url = 'http://localhost:8000/api/users/';
+  url = this.global.API_URL + '/users/';
   private handleError: HandleError;
 
   constructor(
     private httpClient: HttpClient,
-    private httpErrorHandler: HttpErrorHandlerService) {
+    private httpErrorHandler: HttpErrorHandlerService,
+    private global: Globals) {
       this.handleError = this.httpErrorHandler.createHandleError('UserService');
     }
   /**
